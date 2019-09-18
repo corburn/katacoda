@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# If snakemake is not installed, ubuntu will prompt the user to install an old version:
+#
+# The program 'snakemake' is currently not installed. You can install it by typing:
+# apt install snakemake
+#
+# The purpose of this script is to intercept the 'apt install' prompt.
+
+echo "Either the 'snakemake' program is not installed or the conda environment is not active."
+exit 1

@@ -1,0 +1,57 @@
+{
+  "title": "NASP Snakemake Workflow",
+  "description": "Install NASP and test running it in a local and computer cluster environment",
+  "difficulty": "Intermediate",
+  "time": "15 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Install Conda Package Manager",
+        "text": "bash_install_miniconda3.md"
+      },
+      {
+        "title": "Generate Test Data",
+        "text": "bbmap_generate_testdata.md"
+      },
+      {
+        "title": "NASP Workflow (local)",
+        "text": "nasp_workflow.md"
+      },
+      {
+        "title": "Practice on a (SLURM) Computer Cluster",
+        "text": "apt_install_slurm.md"
+      },
+      {
+        "title": "Snakemake Config",
+        "text": "snakemake_profile.md"
+      },
+      {
+        "title": "Install Singularity",
+        "text": "apt_install_singularity.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "snakemake",
+          "target": "/usr/local/bin/",
+          "chmod": "+x"
+        }
+      ]
+    }
+  },
+  "environment": {
+    "hideintro": false,
+    "hidefinish": false,
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}

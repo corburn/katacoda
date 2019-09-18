@@ -1,0 +1,38 @@
+{
+  "title": "rstudio",
+  "description": "Install libraries, run a script, view a plot",
+  "difficulty": "Beginner",
+  "time": "5 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "A Simple Plot",
+        "text": "step1.md",
+	"code": "docker_run_rstudio.sh"
+      }
+    ],
+    "intro": {
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "assets": {
+    "host01": [
+      {
+        "file": "*.R",
+        "target": "/home/rstudio/"
+      }
+    ]
+  },
+  "environment": {
+    "uilayout": "terminal-iframe",
+    "hideintro": true,
+    "hidefinish": false
+  },
+  "backend": {
+    "imageid": "ubuntu",
+    "port": "8787"
+  }
+}

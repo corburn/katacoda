@@ -1,0 +1,3 @@
+In this scenario you'll learn how to `TODO`. The scenario is designed to demostrate how you can use `X` within a `Y`, using `Z` to accomplish `GOAL`
+
+The steps guide you to installing nextstrain, running an analysis with the TB Tutorial dataset, visualizing the results in Auspice, ...

@@ -1,0 +1,8 @@
+changeps1: True
+always_yes: True
+update_dependencies: True
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+

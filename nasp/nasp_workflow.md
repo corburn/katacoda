@@ -32,8 +32,8 @@ One of the IQTree outputs is `bestsnp.fasta.iqtree` which contains a text render
 - The iqtree step will likely be integrated into the workflow.
 
 <pre class="file" data-target="clipboard">
-git clone --depth 1 --branch v1.1.2 https://github.com/TGenNorth/NASP.git $HOME/NASP
-pushd $HOME/NASP/nasp/nasptool && go install && popd
+git clone --depth 1 --branch dev https://github.com/TGenNorth/NASP.git $HOME/NASP
+pushd $HOME/NASP/nasp && go install && popd
 nasp --help
 </pre>
 

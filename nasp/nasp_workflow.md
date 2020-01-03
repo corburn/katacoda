@@ -1,19 +1,23 @@
+Install Snakemake
+
+`conda create -y -n snakemake -c conda-forge -c bioconda snakemake-minimal
+conda activate snakemake
+`{{execute}}
+
 Download the NASP Snakemake Workflow
 
 `git clone --depth 1 --branch workflow https://github.com/TGenNorth/NASP workflow`{{execute}}
 
-Install Snakemake; the `conda-build` portion will not be required when this revision is released.
+(prerelease only) This step will not be required when this revision is released; it will be pulled from bioconda.
 
-`conda install -n base -y conda-build
-conda activate base
-conda build workflow
-conda create -y -n snakemake -c conda-forge -c bioconda snakemake-minimal
-conda activate snakemake
+`git clone --depth 1 --branch dev https://github.com/TGenNorth/NASP.git $HOME/NASP
+pushd $HOME/NASP/nasp && go install && popd
+nasp --help
 `{{execute}}
 
-`snakemake --list-target-rules`{{execute}}
-
 Run the NASP Snakemake Workflow.
+
+`snakemake --list-target-rules`{{execute}}
 
 `snakemake -j --use-conda -- iqtree`{{execute}}
 
@@ -30,11 +34,3 @@ One of the IQTree outputs is `bestsnp.fasta.iqtree` which contains a text render
 - Add a command that will render a graphical form of the phylogenetic tree
 - Future steps will show advanced use cases such as submitting to a cluster. This will include configuration files that may reduce the typical run command to something like `snakemake --profile nasp`.
 - The iqtree step will likely be integrated into the workflow.
-
-<pre class="file" data-target="clipboard">
-git clone --depth 1 --branch dev https://github.com/TGenNorth/NASP.git $HOME/NASP
-pushd $HOME/NASP/nasp && go install && popd
-nasp --help
-</pre>
-
-

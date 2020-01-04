@@ -8,7 +8,7 @@ https://snakemake.readthedocs.io/en/stable/snakefiles/deployment.html#distributi
 `apt-get update \
 && apt-get install -y build-essential \
   libssl-dev uuid-dev libseccomp-dev \
-  pkg-config squashfs-tools cryptsetup
+  pkg-config squashfs-tools cryptsetup \
 `{{execute}}
 
 Download and extract the latest singularity release.

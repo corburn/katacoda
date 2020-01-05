@@ -25,7 +25,7 @@ One of the NASP outputs is `bestsnp.tsv` which contains the high-confidence SNPs
 Build a phylogenetic tree from the bestsnp.tsv using `iqtree`:
 One of the IQTree outputs is `bestsnp.fasta.iqtree` which contains a text rendering of the phylogenetic tree.
 
-`cat bestsnp.fasta.iqtree`{{execute}}
+`cat bestsnp.tsv.fasta.iqtree`{{execute}}
 
 ---
 
@@ -34,3 +34,6 @@ One of the IQTree outputs is `bestsnp.fasta.iqtree` which contains a text render
 - Add a command that will render a graphical form of the phylogenetic tree
 - Future steps will show advanced use cases such as submitting to a cluster. This will include configuration files that may reduce the typical run command to something like `snakemake --profile nasp`.
 - The iqtree step will likely be integrated into the workflow.
+
+optional: `$(snakemake --bash-completion)`{{execute}}
+

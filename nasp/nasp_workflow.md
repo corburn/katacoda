@@ -1,21 +1,17 @@
-Install Snakemake
-
-`conda create -y -n snakemake -c conda-forge -c bioconda snakemake-minimal
+`conda create -y -n snakemake snakemake-minimal
 conda activate snakemake
 `{{execute}}
 
-Download the NASP Snakemake Workflow
-
 `git clone --depth 1 --branch workflow https://github.com/TGenNorth/NASP workflow`{{execute}}
 
-(prerelease only) This step will not be required when this revision is released; it will be pulled from bioconda.
+(Pre-Release Only) When this revision is released, nasp will be pulled from bioconda.
 
 `git clone --depth 1 --branch dev https://github.com/TGenNorth/NASP.git $HOME/NASP
 pushd $HOME/NASP/nasp && go install && popd
 nasp --help
 `{{execute}}
 
-Run the NASP Snakemake Workflow.
+# Run the NASP Snakemake Workflow.
 
 `snakemake --list-target-rules`{{execute}}
 

@@ -1,6 +1,6 @@
 We need data to run an analysis. The following will generate a random `reference.fasta` along with a collection of fastq reads and fasta assemblies based on it.
 
-`conda create -y -n bbmap -c conda-forge -c bioconda bbmap
+`conda create -y -n bbmap bbmap
 conda activate bbmap
 `{{execute}}
 

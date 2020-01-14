@@ -1,8 +1,10 @@
+`--list-target-rules` shows available target rules in a given Snakefile. It is can be useful as a reminder of what the Snakefile can do.
+
+`snakemake --list-target-rules`{{execute}}
+
 To run a demo analysis we'll use the `testdata` target to create a testdata/ directory with randomly generated data.
 
 `snakemake --use-conda -- testdata`{{execute}}
-
-`snakemake --list-target-rules`{{execute}}
 
 `snakemake -j -d ./testdata --use-conda -- iqtree`{{execute}}
 

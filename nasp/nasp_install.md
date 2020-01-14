@@ -1,4 +1,4 @@
-The following commands install `snakemake` and download the NASP workflow.
+The following will install `snakemake` and download the NASP workflow into the current directory. Additional dependencies will be automatically installed as-needed using conda.
 
 `conda create -y -n snakemake snakemake-minimal
 conda activate snakemake
@@ -13,5 +13,3 @@ $(snakemake --bash-completion)
 pushd $HOME/NASP/nasp && go install && popd
 nasp --help
 `{{execute}}
-
-

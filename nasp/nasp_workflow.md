@@ -1,3 +1,5 @@
+The following commands install `snakemake` and download the NASP workflow.
+
 `conda create -y -n snakemake snakemake-minimal
 conda activate snakemake
 `{{execute}}
@@ -13,16 +15,13 @@ nasp --help
 
 # Run the NASP Snakemake Workflow.
 
-We need data to run an analysis. The following will generate a random `reference.fasta` along with a collection of fastq reads and fasta assemblies based on it.
-
+To run a demo analysis we'll use the `testdata` target to create a testdata/ directory with randomly generated data.
 
 `snakemake --use-conda -- testdata`{{execute}}
 
 `snakemake --list-target-rules`{{execute}}
 
-`cd testdata`{{execute}}
-
-`snakemake -j -s $HOME/workflow/Snakefile --use-conda -- iqtree`{{execute}}
+`snakemake -j -d ./testdata --use-conda -- iqtree`{{execute}}
 
 One of the NASP outputs is `bestsnp.tsv` which contains the high-confidence SNPs.
 Build a phylogenetic tree from the bestsnp.tsv using `iqtree`:
@@ -39,4 +38,5 @@ One of the IQTree outputs is `bestsnp.fasta.iqtree` which contains a text render
 - The iqtree step will likely be integrated into the workflow.
 
 optional: `$(snakemake --bash-completion)`{{execute}}
+
 

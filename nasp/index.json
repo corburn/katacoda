@@ -10,10 +10,6 @@
         "text": "bash_install_miniconda3.md"
       },
       {
-        "title": "Generate Test Data",
-        "text": "bbmap_generate_testdata.md"
-      },
-      {
         "title": "NASP Workflow (local)",
         "text": "nasp_workflow.md"
       },

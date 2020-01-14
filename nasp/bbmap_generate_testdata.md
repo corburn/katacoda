@@ -1,8 +1,8 @@
-We need data to run an analysis. The following will generate a random `reference.fasta` along with a collection of fastq reads and fasta assemblies based on it.
-
 `conda create -y -n bbmap bbmap
 conda activate bbmap
 `{{execute}}
+
+We need data to run an analysis. The following will generate a random `reference.fasta` along with a collection of fastq reads and fasta assemblies based on it.
 
 `randomgenome.sh len=1000 out=reference.fasta
 mkdir -pv assemblies

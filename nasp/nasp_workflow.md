@@ -4,7 +4,7 @@ conda activate snakemake
 
 `git clone --depth 1 --branch workflow https://github.com/TGenNorth/NASP workflow`{{execute}}
 
-(Pre-Release Only) When this revision is released, nasp will be pulled from bioconda.
+(Pre-Release Only) When this revision is released, nasp will be pulled from bioconda as if it was just another dependency.
 
 `git clone --depth 1 --branch dev https://github.com/TGenNorth/NASP.git $HOME/NASP
 pushd $HOME/NASP/nasp && go install && popd
@@ -13,9 +13,16 @@ nasp --help
 
 # Run the NASP Snakemake Workflow.
 
+We need data to run an analysis. The following will generate a random `reference.fasta` along with a collection of fastq reads and fasta assemblies based on it.
+
+
+`snakemake --use-conda -- testdata`{{execute}}
+
 `snakemake --list-target-rules`{{execute}}
 
-`snakemake -j --use-conda -- iqtree`{{execute}}
+`cd testdata`{{execute}}
+
+`snakemake -j -s $HOME/workflow/Snakefile --use-conda -- iqtree`{{execute}}
 
 One of the NASP outputs is `bestsnp.tsv` which contains the high-confidence SNPs.
 Build a phylogenetic tree from the bestsnp.tsv using `iqtree`:

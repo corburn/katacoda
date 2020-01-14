@@ -7,11 +7,15 @@
     "steps": [
       {
         "title": "Install Conda Package Manager",
-        "text": "bash_install_miniconda3.md"
+        "text": "miniconda3_install.md"
+      },
+      {
+        "title": "Install NASP Workflow",
+        "text": "nasp_install.md"
       },
       {
         "title": "NASP Workflow (local)",
-        "text": "nasp_workflow.md"
+        "text": "nasp_workflow_local.md"
       },
       {
         "title": "Practice on a (SLURM) Computer Cluster",

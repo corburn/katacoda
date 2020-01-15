@@ -1,4 +1,4 @@
-The following will install `snakemake` and download the NASP workflow into the current directory. Additional dependencies will be automatically installed as-needed using conda.
+The following will install Snakemake and download the NASP Workflow in the current directory. Additional dependencies will be automatically installed as-needed using conda.
 
 `conda create -y -n snakemake snakemake-minimal
 conda activate snakemake

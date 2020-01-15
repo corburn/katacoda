@@ -1,8 +1,6 @@
-`--list-target-rules` shows available target rules in a given Snakefile. It is can be useful as a reminder of what the Snakefile can do.
+`snakemake --list-target-rules`{{execute}} shows available target rules in a given Snakefile. It is can be useful as a reminder of what the Snakefile can do.
 
-`snakemake --list-target-rules`{{execute}}
-
-To run a demo analysis we'll use the `testdata` target to create a testdata/ directory with randomly generated data.
+To run a demo analysis we'll use the `testdata` target to create a testdata/ directory with randomly generated data. This may take a few minutes the first time as conda installs bbtools.
 
 `snakemake --use-conda -- testdata`{{execute}}
 

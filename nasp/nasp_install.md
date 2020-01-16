@@ -5,7 +5,7 @@ conda activate snakemake
 $(snakemake --bash-completion)
 `{{execute}}
 
-`git clone --depth 1 --branch workflow https://github.com/TGenNorth/NASP workflow`{{execute}}
+`git clone --depth 1 --branch workflow https://github.com/TGenNorth/NASP $HOME/workflow`{{execute}}
 
 (Pre-Release Only) When this revision is released, nasp will be pulled from bioconda as if it was just another dependency.
 

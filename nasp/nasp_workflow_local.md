@@ -1,4 +1,4 @@
-The `testdata` target creates a testdata/ directory with random data for a demo analysis. The `iqtree` target will run the workflow steps to produce a maximum likelihood tree.
+The `testdata` target creates a testdata/ directory for a demo analysis. The `iqtree` target will run the workflow steps to produce a maximum likelihood tree.
 
 `snakemake --use-conda -- testdata`{{execute}}
 
@@ -22,10 +22,6 @@ To keep it simple, the previous commands took advantage of default paths in Snak
 Later steps will show advanced use cases such as submitting to a cluster and configuration files that may reduce the typical workflow to something like:
 
 `snakemake --profile nasp`{{execute}}
-
-# Snakefile Target Rules
-
-`snakemake --list-target-rules`{{execute}} prints all the target rules defined in the Snakefile(s). It is can be useful as a reminder of what the Snakefile can do.
 
 ---
 

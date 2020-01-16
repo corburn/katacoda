@@ -14,5 +14,8 @@ pushd $HOME/NASP/nasp && go install && popd
 nasp --help
 `{{execute}}
 
-In this scenario we will take advantage of Snakemake's `--use-conda` flag to automatically install dependencies as-needed. This will result in a delay as dependencies are installed the first time a Snakefile rule is used, but subsequent runs will reuse previously installed tools. A typical conda install should not take more than a few minutes.
+In this scenario we will take advantage of Snakemake's `--use-conda` flag to automatically install dependencies as-needed. This will result in a delay as dependencies are installed the first time a Snakefile rule is used, but subsequent runs will reuse previously installed tools. Ideally a conda install should not take more than a few minutes.
 
+---
+
+https://snakemake.readthedocs.io/en/stable/snakefiles/deployment.html#integrated-package-management

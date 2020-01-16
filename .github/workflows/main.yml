@@ -1,10 +1,21 @@
-#on: [push]
-on:
-  push:
-    branches:
-    - master
+on: [push]
 
 jobs:
+  markdown-link-check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+    - name: markdown-link-check
+      # markdown-link-check does not return a non-zero exit status when it detects broken links.
+      # https://stackoverflow.com/a/692407
+      run: |
+        npm install -g markdown-link-check
+        find . -name \*.md -exec markdown-link-check --quiet {} \; > >(tee -a stdout.log) 2> >(tee -a stderr.log >&2)
+        if [[ -s stderr.log ]]; then
+          echo "stderr.log is not empty"
+          exit 113
+        fi
   validate:
     runs-on: ubuntu-latest
     steps:
@@ -14,14 +25,3 @@ jobs:
       run: |
         npm install -g katacoda-cli
         katacoda validate:all --repo=$GITHUB_WORKSPACE
-    - name: markdown-link-check
-      # https://stackoverflow.com/a/692407
-      run: |
-        set -x
-        npm install -g markdown-link-check
-        find . -name \*.md -exec markdown-link-check --quiet {} \; > >(tee -a stdout.log) 2> >(tee -a stderr.log >&2)
-        if [[ -s stderr.log ]]; then
-          echo "stderr.log is not empty"
-          cat stderr.log
-          exit 113
-        fi

@@ -1,4 +1,4 @@
-A typical user will not need to install the [SLURM Work Load Manager](https://slurm.schedmd.com/overview.html), but we will in this step to get an idea of what it is like running on a computer cluster.
+To simulate running on a compute cluster, the following will install the [SLURM Work Load Manager](https://slurm.schedmd.com/overview.html).
 
 `apt update && apt install -y slurm-wlm slurm-drmaa-dev python-drmaa`{{execute}}
 

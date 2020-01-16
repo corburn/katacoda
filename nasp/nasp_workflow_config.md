@@ -2,7 +2,7 @@ The NASP Workflow defaults are defined by the [JSON schema](https://json-schema.
 
 `snakemake --quiet config`{{execute}}
 
-`snakemake --use-conda --list-target-rules`{{execute}} prints all the target rules defined in the Snakefile(s). It is can be useful as a reminder of what the Snakefile can do.
+`snakemake --list-target-rules`{{execute}} prints all the target rules defined in the Snakefile(s). It is can be useful as a reminder of what the Snakefile can do.
 
 ---
 

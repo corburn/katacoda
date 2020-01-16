@@ -16,16 +16,6 @@ Later steps will show advanced use cases such as submitting to a cluster. This w
 
 `snakemake --profile nasp`{{execute}}
 
-# TODO
-
-The NASP Workflow defaults are defined by the [JSON schema](https://json-schema.org/) `cat $HOME/workflow/schemas/config.schema.yaml`{{execute}}. The `config` target will print the current configuration.
-
-`snakemake --quiet config`{{execute}}
-
-`snakemake --use-conda --list-target-rules`{{execute}} prints all the target rules defined in the Snakefile(s). It is can be useful as a reminder of what the Snakefile can do.
-
 ---
 
 https://snakemake.readthedocs.io/en/stable/executing/cli.html
-
-

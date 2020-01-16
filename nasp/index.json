@@ -11,11 +11,15 @@
       },
       {
         "title": "Install NASP Workflow",
-        "text": "nasp_install.md"
+        "text": "nasp_workflow_install.md"
       },
       {
         "title": "NASP Workflow",
         "text": "nasp_workflow_local.md"
+      },
+      {
+        "title": "NASP Workflow Config",
+        "text": "nasp_workflow_config.md"
       },
       {
         "title": "Practice on a (SLURM) Computer Cluster",

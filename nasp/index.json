@@ -28,10 +28,6 @@
       {
         "title": "Snakemake Config",
         "text": "snakemake_profile.md"
-      },
-      {
-        "title": "Install Singularity",
-        "text": "apt_install_singularity.md"
       }
     ],
     "intro": {

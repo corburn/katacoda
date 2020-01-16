@@ -17,11 +17,11 @@ jobs:
     - name: markdown-link-check
       # https://stackoverflow.com/a/692407
       run: |
+        set -x
         npm install -g markdown-link-check
-        find . -name \*.md -exec markdown-link-check --quiet {} \; >(tee -a stdout.log) 2> >(tee -a stderr.log >&2)
-        echo "FOOBAR"
-        cat stderr.log
-        if [[ -s stderr.log ]]; do
+        find . -name \*.md -exec markdown-link-check --quiet {} \; > >(tee -a stdout.log) 2> >(tee -a stderr.log >&2)
+        if [[ -s stderr.log ]]; then
           echo "stderr.log is not empty"
+          cat stderr.log
           exit 113
         fi

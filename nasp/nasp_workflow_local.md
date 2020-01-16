@@ -10,12 +10,21 @@ The `testdata` target creates a testdata/ directory with random data for a demo 
 
 To keep it simple, the previous commands took advantage of default paths in Snakemake and the NASP Workflow. The following is an example of how you can override the defaults:
 
-`snakemake --use-conda -s $HOME/workflow/Snakefile --config reference=$HOME/testdata/reference.fasta assemblies=$HOME/testdata/assemblies minimum_coverage=0 outdir=./testdata2 -- iqtree`{{execute}}
+`snakemake --use-conda \
+  --config reference=$HOME/testdata/reference.fasta \
+           assemblies=$HOME/testdata/assemblies \
+           minimum_coverage=0 \
+           outdir=./testdata2 \
+  -s $HOME/workflow/Snakefile -- iqtree`{{execute}}
 
-Later steps will show advanced use cases such as submitting to a cluster. This will include examples of configuration files that may reduce the typical workflow to something like:
+Later steps will show advanced use cases that include submitting to a cluster as well as configuration files that could result in a workflow such as:
 
 `snakemake --profile nasp`{{execute}}
 
+# Snakefile Target Rules
+
+`snakemake --list-target-rules`{{execute}} prints all the target rules defined in the Snakefile(s). It is can be useful as a reminder of what the Snakefile can do.
+
 ---
 
-https://snakemake.readthedocs.io/en/stable/executing/cli.html
+https://snakemake.readthedocs.io/en/stable/executing/cli.html#all-options

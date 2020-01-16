@@ -8,7 +8,7 @@ conda config \
   --prepend channels conda-forge
 `{{execute}}
 
-Ignore the prompt to re-open your current shell, `source ~/.bashrc` achieves a similar result.
+Ignore the prompt to re-open your current shell, `source ~/.bashrc` achieves a similar result. The 'defaults' channel warning is also harmless.
 
 ---
 

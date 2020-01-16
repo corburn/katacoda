@@ -1,4 +1,4 @@
-In this scenario you'll learn how to install and run the [Northern Arizona SNP Pipeline](https://github.com/TGenNorth/NASP) (https://doi.org/10.1099/mgen.0.000074) to identify high-confidence variant positions in a collection of genomes. The output is frequently used to build phylogenetic trees.
+In this scenario you'll learn how to install and run the [Northern Arizona SNP Pipeline](https://github.com/TGenNorth/NASP) (https://doi.org/10.1099/mgen.0.000074) to identify high-confidence variant positions in a collection of genomes.
 
 # Feedback
 

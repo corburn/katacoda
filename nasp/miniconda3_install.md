@@ -12,7 +12,7 @@ Ignore the prompt to re-open your current shell, `source ~/.bashrc` achieves a s
 
 ---
 
-Conda is recommended as an option to install dependencies. Additional information about conda can be found here:
+Conda is recommended as an easy way to install dependencies. Additional information about conda can be found here:
 
 https://docs.conda.io/en/latest/
 https://bioconda.github.io/user/install.html

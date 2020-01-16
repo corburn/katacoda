@@ -1,27 +1,47 @@
-https://slurm.schedmd.com/rosetta.pdf
+`snakemake --profile nasp`
 
-[Cluster Configuration](https://snakemake.readthedocs.io/en/stable/snakefiles/configuration.html#cluster-configuration)
+https://snakemake.readthedocs.io/en/stable/snakefiles/configuration.html#cluster-configuration
 
-`snakemake -j 999 --cluster "sbatch -A my_account -p defq -n 1 -t 00:15:00"`
+With `--cluster sbatch` 
 
-`snakemake --list-target-rules`{{execute}}
+`snakemake \
+  --use-conda \
+  --jobs 100 \
+  --directory ./testdata \
+  --cluster "sbatch -n 1 -t 00:15:00" \
+  -- iqtree`
+
+Given a `--cluster-config`, the `--cluster` command can be generalized with placeholders:
+
+`snakemake \
+  --use-conda \
+  -j 999 \
+  --cluster-config $HOME/.config/snakemake/nasp/cluster.yaml \
+  --cluster "sbatch -A {cluster.account} -p {cluster.partition} -n {cluster.n} -t {cluster.time}" \
+  -- iqtree`
+
+The following is an example of a cluster config. `__default__` is a special rule
 
 <pre class="file" data-target="clipboard">
 # $HOME/.config/snakemake/nasp/cluster.yaml
 ---
 __default__:
-  account: "my_account",
-  time: "00:15:00",
-  n: 1,
+  account: "my_account"
+  time: "00:15:00"
+  n: 1
   partition: "core"
-compute1:
-  time: "00:20:00"
 frankenfasta:
   time: "00:20:00"
+iqtree:
+  time: "01:00:00"
+  n: 64
 ...
 </pre>
 
-`snakemake -j 999 --cluster-config cluster.json --cluster "sbatch -A {cluster.account} -p {cluster.partition} -n {cluster.n} -t {cluster.time}"`
+https://slurm.schedmd.com/rosetta.pdf
+
+[Cluster Configuration](https://snakemake.readthedocs.io/en/stable/snakefiles/configuration.html#cluster-configuration)
+
 
 
 [Profiles](https://snakemake.readthedocs.io/en/stable/executable.html#profiles)
@@ -30,6 +50,12 @@ With the `snakemake --profile [name | filepath]` flag
 Here, a folder myprofile is searched in per-user and global configuration directories (on Linux, this will be $HOME/.config/snakemake and /etc/xdg/snakemake, you can find the answer for your system via snakemake --help). Alternatively, an absolute or relative path to the folder can be given. The profile folder is expected to contain a file config.yaml that defines default values for the Snakemake command line arguments. For example, the file
 
 `mkdir -pv $HOME/.config/snakemake/nasp`{{execute}}
+
+`cat <<EOF>$HOME/.config/snakemake/nasp/config.yaml
+cluster: "sbatch -A {cluster.account} -p {cluster.partition} -n {cluster.n} -t {cluster.time}"
+jobs: 100
+use-conda: True
+`{{execute}}
 
 The profile folder can additionally contain auxilliary files, e.g., jobscripts, or any kind of wrappers. See https://github.com/snakemake-profiles/doc for examples.
 

@@ -1,4 +1,4 @@
-The `testdata` target creates a testdata/ directory with random data. The `iqtree` target will run the workflow steps to produce a maximum likelihood tree. The `--use-conda` flag tells Snakemake to install dependencies as-needed. This will result in a delay the first time you use a target. Subsequent runs will use previously installed tools. A typical conda install should not take more than a few minutes.
+The `testdata` target creates a testdata/ directory with random data for a demo analysis. The `iqtree` target will run the workflow steps to produce a maximum likelihood tree.
 
 `snakemake --use-conda -- testdata`{{execute}}
 

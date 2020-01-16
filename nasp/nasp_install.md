@@ -1,4 +1,4 @@
-The following will install Snakemake and download the NASP Workflow in the current directory. Additional dependencies will be automatically installed as-needed using conda.
+The following will install Snakemake and download the NASP Workflow in the current directory.
 
 `conda create -y -n snakemake snakemake-minimal
 conda activate snakemake
@@ -13,3 +13,6 @@ $(snakemake --bash-completion)
 pushd $HOME/NASP/nasp && go install && popd
 nasp --help
 `{{execute}}
+
+In this scenario we will take advantage of Snakemake's `--use-conda` flag to automatically install dependencies as-needed. This will result in a delay as dependencies are installed the first time a Snakefile rule is used, but subsequent runs will reuse previously installed tools. A typical conda install should not take more than a few minutes.
+

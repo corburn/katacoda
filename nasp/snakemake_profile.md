@@ -51,10 +51,29 @@ Here, a folder myprofile is searched in per-user and global configuration direct
 
 `mkdir -pv $HOME/.config/snakemake/nasp`{{execute}}
 
+`cat <<EOF>$HOME/.config/snakemake/nasp/cluster.yaml
+# $HOME/.config/snakemake/nasp/cluster.yaml
+---
+__default__:
+  account: "my_account"
+  time: "00:15:00"
+  n: 1
+  partition: "core"
+frankenfasta:
+  time: "00:20:00"
+iqtree:
+  time: "01:00:00"
+  n: 64
+...
+EOF
+`{{execute}}
+
 `cat <<EOF>$HOME/.config/snakemake/nasp/config.yaml
 cluster: "sbatch -A {cluster.account} -p {cluster.partition} -n {cluster.n} -t {cluster.time}"
+cluster-config: cluster.yaml
 jobs: 100
 use-conda: True
+EOF
 `{{execute}}
 
 The profile folder can additionally contain auxilliary files, e.g., jobscripts, or any kind of wrappers. See https://github.com/snakemake-profiles/doc for examples.

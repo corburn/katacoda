@@ -29,7 +29,7 @@ __default__:
   account: "my_account"
   time: "00:15:00"
   n: 1
-  partition: "core"
+  partition: "debug"
 frankenfasta:
   time: "00:20:00"
 iqtree:
@@ -58,7 +58,7 @@ __default__:
   account: "my_account"
   time: "00:15:00"
   n: 1
-  partition: "core"
+  partition: "debug"
 frankenfasta:
   time: "00:20:00"
 iqtree:

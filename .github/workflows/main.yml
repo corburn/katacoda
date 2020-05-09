@@ -13,7 +13,11 @@ jobs:
         npm install -g markdown-link-check
         find . -name \*.md -exec markdown-link-check --quiet {} \; > >(tee -a stdout.log) 2> >(tee -a stderr.log >&2)
         if [[ -s stderr.log ]]; then
+          # FIXME: ignore katacoda URI placeholders.
+          # https://www.katacoda.com/docs/scenarios/displaying-ports
           echo "stderr.log is not empty"
+          cat stderr.log
+          echo "DONE"
           exit 113
         fi
   validate:

@@ -2,7 +2,7 @@ The `testdata` target creates a testdata/ directory for a demo analysis. The `iq
 
 `snakemake --use-conda --cores 1 -- testdata`{{execute}}
 
-`snakemake --use-conda --cores 4 -d ./testdata -- iqtree`{{execute}}
+`snakemake --use-conda --cores 1 --directory ./testdata -- iqtree`{{execute}}
 
 `cat ./testdata/bestsnp.iqtree`{{execute}}
 
